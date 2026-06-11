@@ -1,0 +1,16 @@
+import pandas as pd
+df=pd.read_csv("churnguard_data.csv")
+print("Shape:", df.shape)
+print(df.head())
+print(df.info())
+print(df.isna().sum())
+print(df[df.duplicated(keep=False)])
+print(df.duplicated(keep=False).sum())
+print(df["Churn"].value_counts())
+t=df["Contract"].value_counts()
+print(t.index.tolist())
+print(df["Contract"].unique().tolist())
+import numpy as np
+print(np.unique(df["Contract"]))
+print(df["Contract"].isna().sum())
+print(df[df["InternetService"].isna()])
